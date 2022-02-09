@@ -1,30 +1,21 @@
 package main;
 
-import utils.FileUtils;
-import utils.IReader;
 
-public class Main implements IReader {
+import cryptology.Cryptology;
+
+public class Main {
 
 	public static void main(String[] args) {
-		FileUtils fileUtil = new FileUtils();
-		// fileUtil.writeFile("C:\\Users\\ASUS\\eclipse-workspace\\Passworder\\src\\test.txt",
-		// "java dev aysima");
-		System.out.println("a: " + (int) 'a');
 
-		fileUtil.readFile("C:\\Users\\ASUS\\eclipse-workspace\\Encryption\\src\\test.txt", new Main());
+		Cryptology crypto = new Cryptology();
 
+		crypto.encrypt("C:\\Users\\ASUS\\eclipse-workspace\\Encryption\\src\\test.txt",
+				"C:\\Users\\ASUS\\eclipse-workspace\\Encryption\\src\\sonuc.txt");
+
+
+		crypto.decrypt("C:\\Users\\ASUS\\eclipse-workspace\\Encryption\\src\\sonuc.txt",
+				"C:\\Users\\ASUS\\eclipse-workspace\\Encryption\\src\\dec.txt");
 	}
 
-	@Override
-	public void onChar(char c) {
-		System.out.println("onchar: " + c);
-
-	}
-
-	@Override
-	public void onComplete(String content) {
-		System.out.println("content calisti");
-
-	}
 
 }
