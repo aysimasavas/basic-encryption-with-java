@@ -1,5 +1,15 @@
 package cryptology;
 
 public enum CryptologyMod {
-	ENCRYPT, DECRYPT
+	ENCRYPT(1), DECRYPT(2);
+
+	private int value;
+
+	CryptologyMod(int value) {
+		this.value = value;
+	}
+
+	public int getValue() {
+		return value;
+	}
 }

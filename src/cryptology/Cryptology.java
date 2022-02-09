@@ -70,8 +70,6 @@ public class Cryptology implements IFileEvents {
 		}
 		fileUtil.writeFile(ofp, data);
 		System.out.println("data:" + data);
-
-
 	}
 
 	@Override
