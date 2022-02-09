@@ -12,7 +12,6 @@ public class Main {
 		crypto.encrypt("C:\\Users\\ASUS\\eclipse-workspace\\Encryption\\src\\test.txt",
 				"C:\\Users\\ASUS\\eclipse-workspace\\Encryption\\src\\sonuc.txt");
 
-
 		crypto.decrypt("C:\\Users\\ASUS\\eclipse-workspace\\Encryption\\src\\sonuc.txt",
 				"C:\\Users\\ASUS\\eclipse-workspace\\Encryption\\src\\dec.txt");
 	}

@@ -9,8 +9,8 @@ public class Cryptology implements IFileEvents {
 	private String ifp = "";
 	private String ofp = "";
 	private FileUtil fileUtil;
-	private int mod = 0;
 
+	CryptologyMod mod;
 
 	public Cryptology() {
 		fileUtil = new FileUtil(this);
@@ -48,7 +48,7 @@ public class Cryptology implements IFileEvents {
 	public void encrypt(String ifp, String ofp) {
 		this.ifp = ifp;
 		this.ofp = ofp;
-		this.mod = 1;
+		this.mod = CryptologyMod.ENCRYPT;
 		fileUtil.readFile(ifp);
 
 	}
@@ -56,16 +56,16 @@ public class Cryptology implements IFileEvents {
 	public void decrypt(String ifp, String ofp) {
 		this.ifp = ifp;
 		this.ofp = ofp;
-		this.mod = 2;
+		this.mod = CryptologyMod.DECRYPT;
 		fileUtil.readFile(ifp);
 	}
 
 	@Override
 	public void onReadingComplete(String content) {
-		if (mod == 1) {
+		if (mod == CryptologyMod.ENCRYPT) {
 			data = encryption(content);
 		}
-		else if (mod == 2) {
+		else if (mod == CryptologyMod.DECRYPT) {
 			data=decryption(content);
 		}
 		fileUtil.writeFile(ofp, data);
